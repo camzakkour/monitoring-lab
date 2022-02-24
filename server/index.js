@@ -22,5 +22,7 @@ app.get('/', (req, res) => {
 
 app.use(express.static(path.join(__dirname, '../public')))
 
+app.use(rollbar.errorHandler)
+
 const port = process.env.PORT || 4546
 app.listen(port, () => console.log(`Take us to warp ${port}`))
